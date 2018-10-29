@@ -16,11 +16,12 @@ https://github.com/lastpass/lastpass-cli#installing-on-os-x
 ```
 ln -s lastpass_wrapper.sh lpw
 ln -s lastpass_wrapper.sh lun
+ln -s lastpass_wrapper.sh lls
 ln -s lastpass_wrapper.sh lst
 ln -s lastpass_wrapper.sh lli
 ln -s lastpass_wrapper.sh llo
 ```
-上から順に、パスワード取得・ID取得・ログイン状態確認・ログイン・ログアウトです。  
+上から順に、パスワード取得・ID取得・登録内容のリスト表示(グループ指定可能)・ログイン状態確認・ログイン・ログアウトです。  
 ログインの為に、スクリプト内のMY_IDを編集する必要があります。  
 lpass自体の処理で再ログイン時は自動的にアカウントを指定してくれるので、設定しなくても使う事はできます。  
 
@@ -28,10 +29,13 @@ lpass自体の処理で再ログイン時は自動的にアカウントを指定
 「web_login」の部分でlastpassに登録しているサイト名(タイトル名)を指定します。  
 aオプションはパイプ用です。  
 ```
+$ lls web_group1
+web_group1
+    web_login [id: 0123456789012345678]
+    some_pw1 [id: 0123456789012345678]
+    some_pw2 [id: 0123456789012345678]
 $ lun -a web_login
 vg-ss
-$ 
-
 $ lpw web_login
   Info: Copyied to clipboard.
 $ 
